@@ -1,0 +1,17 @@
+[package]
+name = "stm32l4-test"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto='fat'
+codegen-units=1
+debug=false
+opt-level='s'
+
+[dependencies]
+cortex-m = { version="0.7.6", features = ["critical-section-single-core", "inline-asm"] }
+cortex-m-rt = "0.7.2"
+embedded-hal = "0.2.7"
+stm32l4xx-hal = { version="0.7.1", features = ["stm32l431"] }
+
